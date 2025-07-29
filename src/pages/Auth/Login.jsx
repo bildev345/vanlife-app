@@ -14,8 +14,10 @@ export async function action({request}){
     const password = formData.get("password");
     try{
         const data = await loginUser({email, password});
+        const pathname = new URL(request.url).searchParams.get("redirectTo") || "/host";
+        //console.log("path from action", path);
         localStorage.setItem("loggedin", true);
-        return redirect("/host");
+        return redirect(pathname);
     }catch(err){
         return err;
     }
