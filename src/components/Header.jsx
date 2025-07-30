@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import iconUrl from '/assets/images/Icon.png';
+import iconUrl from '../assets/images/Icon.png';
 
 export const Header = () => {
     const activeStyle = {

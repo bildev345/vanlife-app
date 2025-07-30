@@ -232,7 +232,7 @@ footer > p{
 .products{
     display : grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px 10px;
+    gap: 20px 20px;
 }
 .product > a {
     text-decoration: none;
@@ -242,10 +242,10 @@ footer > p{
     justify-content: space-between;
     color: #161616;
     font-weight: 600;
-    width: 229.23px;
+    width: 50%;
 }
 .products .product img {
-    width: 229.23px;
+    width: 100%;
     border-radius: 5px;
 }
 .product button {
@@ -269,7 +269,7 @@ footer > p{
     background: #115E59;
 }
 .product-detail {
-    width: 90%;
+    width: 95%;
     margin : auto;
 }
 .product-detail .return-back {
@@ -280,8 +280,7 @@ footer > p{
 }
 .product-detail img {
     margin: 20px 0px;
-    width : 497.32px;
-    height : 490.35px;
+    width: 100%;
     border-radius : 5px;
 }
 .product-detail > span {
