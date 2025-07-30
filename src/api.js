@@ -8,8 +8,8 @@ export async function getVans(id) {
             status: res.status
         }
     }
-    const data = await res.json()
-    return data.vans
+    const data = await res.json();
+    return data.vans;
 }
 
 export async function getHostVans(id) {
