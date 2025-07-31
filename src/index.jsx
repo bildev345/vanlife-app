@@ -16,7 +16,7 @@ import Dashboard from './pages/Host/Dashboard.jsx';
 import Income from './pages/Host/Income.jsx';
 import Reviews from './pages/Host/Reviews.jsx';
 import HostVans, {loader as hostVansLoader} from './pages/Host/HostVans.jsx';
-import HostVanDetailLayout, {loader as hostVanLoader} from './components/HostVanDetailLayout.jsx';
+import HostVanDetail, {loader as hostVanLoader} from './pages/Host/hostVan/HostVanDetail.jsx';
 import VanInfo from './pages/Host/hostVan/VanInfo.jsx';
 import VanPhotos from './pages/Host/hostVan/VanPhotos.jsx';
 import VanPricing from './pages/Host/hostVan/VanPricing.jsx';
@@ -51,6 +51,7 @@ const route = createBrowserRouter(createRoutesFromElements(
     <Route 
         path='host' 
         element={<HostLayout/>}
+        errorElement={<Error/>}
     >
       <Route 
           index 
@@ -77,7 +78,7 @@ const route = createBrowserRouter(createRoutesFromElements(
       />
       <Route 
           path="vans/:id" 
-          element={<HostVanDetailLayout/>}
+          element={<HostVanDetail/>}
           loader={hostVanLoader}
       >
           <Route 

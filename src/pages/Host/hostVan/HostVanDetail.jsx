@@ -1,19 +1,19 @@
 import { Await, defer, Link, Outlet, useLoaderData } from "react-router-dom";
-import HostVanNav from "../pages/Host/hostVan/HostVanNav";
-import { getHostVans } from "../api";
-import { requireAuth } from "../utils/utils";
+import HostVanNav from "./HostVanNav";
+import { getHostVans } from "../../../api";
+import { requireAuth } from "../../../utils/utils";
 import { Suspense } from "react";
 
 export async function loader({request, params}){
     await requireAuth(request);
     return defer({hostVan : getHostVans(params.id)});
 }
-export default function HostVanDetailLayout(){
+export default function HostVanDetail(){
     const dataPromise = useLoaderData();
     const renderHostVan = (hostVan) => {
       return (
         <>
-          <div>
+          <div className="host-van-detail">
             <img src={hostVan.imageUrl} alt="" />
             <div>
               <p className={`vanType ${hostVan.type}`}>{hostVan.type}</p>
@@ -40,13 +40,11 @@ export default function HostVanDetailLayout(){
             >
                 &larr; Back to all vans
             </Link>
-            <div className="host-van-detail">
-                <Suspense fallback={<h2>Loading host van...</h2>}>
-                    <Await resolve={dataPromise.hostVan}>
-                        {renderHostVan}
-                    </Await>
-                </Suspense>
-            </div>
+            <Suspense fallback={<h2>Loading host van...</h2>}>
+                <Await resolve={dataPromise.hostVan}>
+                    {renderHostVan}
+                </Await>
+            </Suspense>
 
         </>
     )

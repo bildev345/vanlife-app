@@ -436,14 +436,27 @@ footer > p{
 
 .host-van-detail{
     padding: 1.5rem;
+    display : flex;
+    margin : 1rem 0;
 }
+
 .host-van-detail > div {
-    display: flex;
-}
-.host-van-detail > div > div {
     margin-left: 1.3rem;
 }
-.host-van-detail > div > img {
+.host-van-detail > div > .rugged {
+    background-color: #115E59;
+    color: #FFFFFF;
+}
+.host-van-detail > div > .simple {
+    background-color: #E17654;
+    color: #FFFFFF;;
+}
+.host-van-detail > div > .luxury {
+    background-color: #161616;
+    color: #FFFFFF;
+}
+
+.host-van-detail img {
     display: block;
     width : 160.15px;
     height: 157.9px;
